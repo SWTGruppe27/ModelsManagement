@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
+import Menu from "./components/Menu.vue";
 import UserLogin from "./components/UserLogin.vue";
 import AddModel from "./components/AddModel.vue";
 import AddManager from "./components/AddManager.vue";
@@ -15,6 +16,11 @@ export default new Router({
     mode: "history",
     base: process.env.BASE_URL,
     routes: [
+        {
+            path: "/Menu",
+            name: "Menu",
+            component: Menu
+        },
         {
             path: "/UserLogin",
             name: "UserLogin",

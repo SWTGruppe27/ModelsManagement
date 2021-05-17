@@ -2,15 +2,16 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <Name>VuejsApp1</Name>
-    <RootNamespace>VuejsApp1</RootNamespace>
+    <Name>ModelsManagement</Name>
+    <RootNamespace>JavaJamVueApp</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>406ffa9f-c448-43d1-ae52-201db247ae17</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
+    <ProjectGuid>9abdceaf-c0b2-42db-a1dc-500b2001ae69</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
     <StartupFile>node_modules\@vue\cli-service\bin\vue-cli-service.js</StartupFile>
     <SearchPath>
     </SearchPath>
@@ -31,13 +32,13 @@
   <ItemGroup>
     <Content Include="public\favicon.ico" />
     <Content Include="public\index.html" />
+    <Content Include="src\router.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\App.vue" />
     <Content Include="src\components\Home.vue" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="src\router.js">
-      <SubType>Code</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dist\" />
@@ -45,9 +46,17 @@
     <Folder Include="src\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\components\" />
+    <Folder Include="src\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="babel.config.js" />
+    <Content Include="src\Images\background.gif" />
+    <Content Include="src\Images\greg.jpg" />
+    <Content Include="src\Images\gregthumb.jpg" />
+    <Content Include="src\Images\javalogo.gif" />
+    <Content Include="src\Images\melanie.jpg" />
+    <Content Include="src\Images\melaniethumb.jpg" />
+    <Content Include="src\Images\windingroad.jpg" />
     <Content Include="src\main.js" />
   </ItemGroup>
   <PropertyGroup>

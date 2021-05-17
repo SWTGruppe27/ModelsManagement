@@ -1,5 +1,5 @@
 {
-  "name": "vuejs-app1",
+  "name": "java-jam-vue-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,12 +7,13 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
-  "description": "VuejsApp1",
+  "description": "JavaJamVueApp",
   "author": {
     "name": ""
   },
   "dependencies": {
-    "vue": "2.5.17"
+    "vue": "2.5.17",
+    "vue-router": "^3.5.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "3.0.4",

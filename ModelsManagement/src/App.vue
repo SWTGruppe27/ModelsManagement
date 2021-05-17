@@ -1,46 +1,49 @@
 <template>
-
-    <div id="wrapper">
-        <header>
-            <div id="hader">
-                <img src="@/Images/javalogo.gif" alt="Company Logo" />
-            </div>
-        </header>
-
-        <div id="nav">
-            <ul>
-                <li><a><router-link to="/Home">Home</router-link></a></li>
-            </ul>
+    <div>
+        <div v-if="homepage">
+            <button v-on:click="changeState()"><a><router-link to="/UserLogin">Login</router-link></a></button>
         </div>
-
-        <div id="content">
+        <div>
             <router-view></router-view>
         </div>
-
-        <footer>
-            <div id="footer">
-                <p>
-                    <i>Copyright &copy; 2013 JavaJam Coffee House </i> <br />
-                    <a href="mailto:simon.schou@hotmail.dk"><i>simon.schou@hotmail.dk</i></a>
-                </p>
-            </div>
-        </footer>
     </div>
 </template>
 
 <script>
-    import Home from './components/Home.vue';
+    import UserLogin from './components/UserLogin.vue';
+    import AddModel from './components/AddModel.vue';
+    import AddManager from "./components/AddManager.vue";
+    import AddModelJob from "./components/AddModelJob.vue";
+    import AddModelToJob from "./components/AddModelToJob.vue";
+    import DeleteModelFromJob from "./components/DeleteModelFromJob.vue";
+    import SeeJobs from "./components/SeeJobs.vue";
+    import AddExpenseToJob from "./components/AddExpenseToJob.vue";
 
     export default {
         name: 'app',
         components: {
-            Home,
+            UserLogin,
+            AddModel,
+            AddManager,
+            AddModelJob,
+            AddModelToJob,
+            DeleteModelFromJob,
+            SeeJobs,
+            AddExpenseToJob
+        },
+        data: ()=>({
+            homepage: true
+        }),
+        methods: {
+            changeState() {
+                this.homepage = false;
+            }
         }
     };
 </script>
 
 <style>
-    body {
+    /*    body {
         background: #ffffcc;
         font-family: Verdana,Arial, sans-serif;
     }
@@ -118,7 +121,7 @@
 
         #nav ul {
             list-style-type: none;
-        }
+        }*/
 </style>
 
 

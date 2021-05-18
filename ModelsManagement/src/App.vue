@@ -84,6 +84,17 @@
         color: white;
         text-decoration: none;
     }
+
+    h1 {
+        padding: 60px;
+        text-align: center;
+        background: #808080;
+        color: white;
+        font-size: 30px;
+        font-family: 'Cooper Black';
+    }
+
+
     /*    body {
         background: #ffffcc;
         font-family: Verdana,Arial, sans-serif;

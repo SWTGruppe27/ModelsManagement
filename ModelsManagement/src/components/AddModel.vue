@@ -12,7 +12,7 @@
             </div><br />
             <div class="form-group">
                 <label for="email">Email: </label>
-                <input type="email" v-model="modelform.email" />
+                <input type="email" v-model="modelform.email" required/>
             </div><br />
             <div class="form-group">
                 <label for="phoneNumber">Phonenumber: </label>
@@ -68,7 +68,7 @@
             </div><br />
             <div class="form-group">
                 <label for="password">Password: </label>
-                <input type="password" v-model="modelform.password" />
+                <input type="password" v-model="modelform.password" required/>
             </div><br />
             <div class="form-group">
                 <button type="button" class="button" v-on:click="addModelFunction"><a><router-link to="/Menu">Add Model</router-link></a></button>

@@ -107,11 +107,10 @@
         methods: {
             addModelFunction() {
                 var url = "https://localhost:44368/api/Models";
-                //console.log(localStorage.getItem("token"));
+
                 fetch(url, {
-                    method: 'POST',  // Or PUT
-                    body: JSON.stringify(this.modelform),  // assumes your data is in a
-                    // form object on your instance.
+                    method: 'POST',  
+                    body: JSON.stringify(this.modelform), 
                     credentials: 'include',
                     headers: new Headers({
                         'Authorization': 'Bearer ' + localStorage.getItem("token"),

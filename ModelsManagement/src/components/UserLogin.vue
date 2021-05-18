@@ -1,16 +1,16 @@
 <template>
-    <div>
+    <div id="login">
         <div v-if="!loginSucceded">
             <h1>Login</h1>
             <form>
                 <div class="form-group">
                     <label for="email">Email: </label>
                     <input type="email" v-model="form.email" placeholder="Enter your email here" required/>
-                </div>
+                </div><br />
                 <div class="form-group">
                     <label for="password">Password: </label>
                     <input type="text" v-model="form.password" placeholder="Enter your password here" required/>
-                </div>
+                </div><br />
                 <div class="form-group">
                     <button type="button" class="button" v-on:click="loginFunction"><a><router-link to="/Menu">Login</router-link></a></button>
                 </div>
@@ -62,5 +62,8 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+    #login{
+        text-align: center;
+    }
 </style>
 

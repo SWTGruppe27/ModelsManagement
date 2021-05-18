@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="addjob">
         <h1>Add New Job</h1>
         <form>
             <div class="form-group">
@@ -57,4 +57,7 @@
 </script>
 
 <style scoped>
+    #addjob{
+        text-align: center;
+    }
 </style>

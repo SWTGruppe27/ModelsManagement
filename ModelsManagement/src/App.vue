@@ -1,6 +1,7 @@
 <template>
     <div>
-        <div v-if="homepage">
+        <div v-if="homepage" id="homepage">
+            <img src="./Images/NewLogo.png" /><br /><br />
             <button v-on:click="changeState()"><a><router-link to="/UserLogin">Login</router-link></a></button>
         </div>
         <div>
@@ -33,7 +34,7 @@
             SeeJobs,
             AddExpenseToJob
         },
-        data: ()=>({
+        data: () => ({
             homepage: true
         }),
         methods: {
@@ -45,6 +46,44 @@
 </script>
 
 <style>
+    #homepage {
+        text-align: center;
+    }
+
+    button {
+        background-color: #000000;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    /* unvisited link */
+    a:link {
+        color: white;
+        text-decoration: none;
+    }
+
+    /* visited link */
+    a:visited {
+        color: white;
+        text-decoration: none;
+    }
+
+    /* mouse over link */
+    a:hover {
+        color: hotpink;
+        text-decoration: none;
+    }
+
+    /* selected link */
+    a:active {
+        color: white;
+        text-decoration: none;
+    }
     /*    body {
         background: #ffffcc;
         font-family: Verdana,Arial, sans-serif;

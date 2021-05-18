@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="deletemodelfromjob">
         <h1>Remove Model From Job</h1>
 
         <div v-for="(job,index) in jobs" v-bind:key="index">
@@ -84,4 +84,7 @@
 </script>
 
 <style scoped>
+    #deletemodelfromjob{
+        text-align: center;
+    }
 </style>

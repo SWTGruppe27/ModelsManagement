@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="addmodel">
         <h1>Add model</h1>
         <form>
             <div class="form-group">
@@ -123,4 +123,7 @@
 </script>
 
 <style scoped>
+    #addmodel{
+        text-align: center;
+    }
 </style>

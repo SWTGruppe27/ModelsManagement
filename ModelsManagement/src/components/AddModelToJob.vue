@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="addmodeltojob">
         <h1>Add Model To Job</h1>
         <form>
             <!--Drop down w jobs-->
@@ -35,4 +35,7 @@
 </script>
 
 <style scoped>
+    #addmodeltojob{
+        text-align: center;
+    }
 </style>

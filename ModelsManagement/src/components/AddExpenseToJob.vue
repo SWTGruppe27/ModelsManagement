@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="addexpenses">
         <h1>Add Expense To Job</h1>
         <form>
             <!--Drop down w jobs-->
@@ -48,4 +48,7 @@
 </script>
 
 <style scoped>
+    #addexpenses{
+        text-align: center;
+    }
 </style>

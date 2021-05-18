@@ -1,6 +1,6 @@
 <template>
     <div id="Menu">
-        <h1>Welcome to ModelManagement!</h1>
+        <h1>Welcome to Model Management!</h1>
 
         <button><router-link to="/AddModel">Add New Model</router-link></button><br /><br />
         <button><router-link to="/AddManager">Add New Manager</router-link></button><br /><br />

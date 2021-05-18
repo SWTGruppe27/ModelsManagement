@@ -59,6 +59,7 @@
     <Content Include="src\components\UserLogin.vue">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="src\Images\NewLogo.png" />
     <Content Include="src\router.js">
       <SubType>Code</SubType>
     </Content>
@@ -76,13 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="babel.config.js" />
-    <Content Include="src\Images\background.gif" />
-    <Content Include="src\Images\greg.jpg" />
-    <Content Include="src\Images\gregthumb.jpg" />
-    <Content Include="src\Images\javalogo.gif" />
-    <Content Include="src\Images\melanie.jpg" />
-    <Content Include="src\Images\melaniethumb.jpg" />
-    <Content Include="src\Images\windingroad.jpg" />
     <Content Include="src\main.js" />
   </ItemGroup>
   <PropertyGroup>

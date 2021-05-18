@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="addmanager">
         <h1>Add News Manager</h1>
         <form>
             <div class="form-group">
@@ -48,4 +48,7 @@
 </script>
 
 <style scoped>
+    #addmanager{
+        text-align: center;
+    }
 </style>

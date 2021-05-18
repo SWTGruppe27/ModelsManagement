@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="deletemodelfromjob">
         <h1>Remove Model From Job</h1>
         <form>
             <!--Drop down w jobs-->
@@ -35,4 +35,7 @@
 </script>
 
 <style scoped>
+    #deletemodelfromjob{
+        text-align: center;
+    }
 </style>

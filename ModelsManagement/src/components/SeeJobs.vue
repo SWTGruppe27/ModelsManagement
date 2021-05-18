@@ -22,8 +22,6 @@
         </div>
 
     </div>
-
-
 </template>
 
 <script>
@@ -60,6 +58,6 @@
 
 <style scoped>
     #elements{
-        text-align:center;
+        text-align: center;
     }
 </style>

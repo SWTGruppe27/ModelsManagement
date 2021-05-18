@@ -96,8 +96,8 @@
                 country: "",
                 birthdate: "",
                 nationality: "",
-                height: "",
-                shoeSize: "",
+                height: 0,
+                shoeSize: 0,
                 hairColor: "",
                 eyeColor: "",
                 comments: "",
@@ -107,10 +107,14 @@
         methods: {
             addModelFunction() {
                 var url = "https://localhost:44368/api/Models";
+                var dataFrom = this.modelform;
+
+                dataFrom.height = Number.parseFloat(this.modelform.height);
+                dataFrom.shoeSize = Number.parseFloat(this.modelform.shoeSize);
 
                 fetch(url, {
                     method: 'POST',  
-                    body: JSON.stringify(this.modelform), 
+                    body: JSON.stringify(dataFrom), 
                     credentials: 'include',
                     headers: new Headers({
                         'Authorization': 'Bearer ' + localStorage.getItem("token"),

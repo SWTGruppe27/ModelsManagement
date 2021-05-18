@@ -14,7 +14,7 @@
                 <input type="number" v-model="jobId" required />
             </div>
             <div class="form-group">
-                <button class="button" v-on:click="findModels()">Find model for jobs</button>
+                <button type="button" class="button" v-on:click="findModels()">Find model for jobs</button>
             </div>
         </form>
 
@@ -63,8 +63,8 @@
                     .catch(error => alert('Something bad happened: ' + error));
             },
             findModels() {
-                var url = "https://localhost:44368/api/Jobs/" + this.jobId;
-                this.getData2(url)
+                var url = "https://localhost:44368/api/Job/" + this.jobId;
+                this.getData2(url);
             },
 
             getData2(url) {
@@ -76,7 +76,7 @@
                         'Content-Type': 'application/json'
                     },
                 }).then(responseJson => responseJson.json()
-                ).then(data => { this.modelsAndJobs = data })
+                ).then(data => { this.modelsAndJobs = data; })
                     .catch(error => alert('Something bad happened: ' + error));
             },
         }

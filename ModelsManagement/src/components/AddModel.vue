@@ -104,7 +104,6 @@
         methods: {
             addModelFunction() {
                 var url = "https://localhost:44368/api/Models";
-                console.log(this.modelform);
                 //console.log(localStorage.getItem("token"));
                 fetch(url, {
                     method: 'POST',  // Or PUT

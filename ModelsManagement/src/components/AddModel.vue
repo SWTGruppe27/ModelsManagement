@@ -80,9 +80,6 @@
 <script>
     export default {
         name: 'AddModel',
-        props: {
-            msg: String
-        },
         data: () => ({
             modelform: {
                 firstName: "",
@@ -106,7 +103,19 @@
         }),
         methods: {
             addModelFunction() {
-
+                var url = "https://localhost:44368/api/Models";
+                console.log(this.modelform);
+                //console.log(localStorage.getItem("token"));
+                fetch(url, {
+                    method: 'POST',  // Or PUT
+                    body: JSON.stringify(this.modelform),  // assumes your data is in a
+                    // form object on your instance.
+                    credentials: 'include',
+                    headers: new Headers({
+                        'Authorization': 'Bearer ' + localStorage.getItem("token"),
+                        'Content-Type': 'application/json'
+                    })
+                }).then(responseJson => { this.response = responseJson }).catch(error => alert('Something bad happened: ' + error));
             }
         }
     };

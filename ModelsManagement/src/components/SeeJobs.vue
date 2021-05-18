@@ -2,7 +2,7 @@
     <div id="elements">
         <h1>See Job</h1>
 
-        <div v-for="job in jobs">
+        <div v-for="(job,index) in jobs" v-bind:key="index">
             <p>Customer: {{job.customer}}</p>
             <p>Start Date: {{dateToString(job.startDate)}}</p>
             <p>Days: {{job.days}}</p>

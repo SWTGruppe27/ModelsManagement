@@ -17,6 +17,9 @@
             </div><br />
             <div class="form-group">
                 <button type="button" class="button" v-on:click="addExpenseToJobFunction()"><a><router-link to="/Menu">Add Expense To Job</router-link></a></button>
+            </div><br />
+            <div class="form-group">
+                <button class="button"><router-link to="/Menu">Back to menu</router-link></button>
             </div>
         </form>
     </div>

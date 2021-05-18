@@ -10,6 +10,7 @@
 </template>
 
 <script>
+    import Menu from './components/Menu.vue';
     import UserLogin from './components/UserLogin.vue';
     import AddModel from './components/AddModel.vue';
     import AddManager from "./components/AddManager.vue";
@@ -22,6 +23,7 @@
     export default {
         name: 'app',
         components: {
+            Menu,
             UserLogin,
             AddModel,
             AddManager,

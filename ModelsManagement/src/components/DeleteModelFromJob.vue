@@ -25,8 +25,6 @@
 
 
         <form>
-            <!--Drop down w jobs-->
-            <!--Drop down w models-->
             <div class="form-group">
                 <button type="button" class="button" v-on:click="deleteModelFromJobFunction()">Load</button>
             </div><br />

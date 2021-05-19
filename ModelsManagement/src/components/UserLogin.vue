@@ -12,7 +12,7 @@
                     <input type="text" v-model="form.password" placeholder="Enter your password here" required/>
                 </div><br />
                 <div class="form-group">
-                    <button type="button" class="button" v-on:click="loginFunction"><a><router-link to="/Menu">Login</router-link></a></button>
+                    <button type="button" class="button"><a v-on:click="loginFunction()"><router-link to="/Menu">Login</router-link></a></button>
                 </div>
             </form>
         </div>

@@ -2,7 +2,7 @@
     <div>
         <div v-if="homepage" id="homepage">
             <img src="./Images/NewLogo.png" /><br /><br />
-            <button v-on:click="changeState()"><a><router-link to="/UserLogin">Login</router-link></a></button>
+            <button><a v-on:click="changeState()"><router-link to="/UserLogin">Login</router-link></a></button>
         </div>
         <div>
             <router-view></router-view>

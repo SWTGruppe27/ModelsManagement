@@ -29,12 +29,12 @@
 
         <form>
             <div class="form-group">
-                <label for="modelId">Model Id: </label>
+                <label for="modelId"><b>Model Id: </b></label>
                 <input type="number" v-model="modelId" required />
             </div>
             <br />
             <div class="form-group">
-                <label for="jobId">Job Id: </label>
+                <label for="jobId"><b>Job Id: </b></label>
                 <input type="number" v-model="jobId" required />
             </div>
             <br />

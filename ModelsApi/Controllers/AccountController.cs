@@ -14,6 +14,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Razor.Language.Intermediate;
 using static BCrypt.Net.BCrypt;
 
 namespace ModelsApi.Controllers
@@ -64,7 +65,7 @@ namespace ModelsApi.Controllers
                                 modelId = model.EfModelId;
                         }
                         var jwt = GenerateToken(account.Email, modelId, account.IsManager);
-                        var token = new Token() { JWT = jwt };
+                        var token = new Token() {JWT = jwt, IsManager = account.IsManager};
                         return token;
                     }
                 }

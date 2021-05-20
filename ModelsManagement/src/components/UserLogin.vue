@@ -3,18 +3,29 @@
         <div v-if="!loginSucceded">
             <h1>Login</h1>
             <form>
-                <div class="form-group">
-                    <label for="email">Email: </label>
-                    <input type="email" v-model="form.email" placeholder="Enter your email here" required/>
-                </div><br />
-                <div class="form-group">
-                    <label for="password">Password: </label>
-                    <input type="text" v-model="form.password" placeholder="Enter your password here" required/>
-                </div><br />
-                <div class="form-group">
-                    <button type="button" class="button"><a v-on:click="loginFunction()"><router-link to="/Menu">Login</router-link></a></button>
-                </div>
+                <table class="center">
+                    <tr>
+                        <td>
+                            <label for="email"><b>Email: </b></label>
+                        </td>
+                        <td>
+                            <input type="email" v-model="form.email" placeholder="Enter your email here" required />
+                        </td>
+                    </tr>
+                    <br />  
+                    <tr>
+                        <td>
+                            <label for="password"><b>Password: </b></label>
+                        </td>
+                        <td>
+                            <input type="password" v-model="form.password" placeholder="Enter your password here" required />
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <button type="button" class="button"><a v-on:click="loginFunction()">Login</a></button>
             </form>
+
         </div>
         <div v-if="loginSucceded">
             <router-view></router-view>
@@ -45,8 +56,14 @@
                     });
                     if (response.ok) {
                         let token = await response.json();
+                        localStorage.clear();
+
                         localStorage.setItem("token", token.jwt);
-                        // Change view to some other component
+
+                        localStorage.setItem("isManager", token.isManager);
+
+                        this.$router.push('/Menu');
+
                         this.loginSucceded = true;
                     } else {
                         alert("Server returned: " + response.statusText);
@@ -62,8 +79,22 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    #login{
+    #login {
+        text-align: center;
+        
+    }
+
+    .center{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    table td  {
         text-align: center;
     }
+    table tr {
+        text-align: center;
+    }
+    
 </style>
 

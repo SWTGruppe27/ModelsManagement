@@ -8,5 +8,6 @@ namespace ModelsApi.Models.DTOs
     public class Token
     {
         public string JWT { get; set; }
+        public bool IsManager { get; set; }
     }
 }

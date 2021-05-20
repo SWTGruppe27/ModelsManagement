@@ -3,19 +3,19 @@
         <h1>Add News Manager</h1>
         <form>
             <div class="form-group">
-                <label for="firstName">First name: </label>
+                <label for="firstName"><b>First name:</b> </label>
                 <input type="text" v-model="managerform.firstName" />
             </div><br />
             <div class="form-group">
-                <label for="lastName">Last name: </label>
+                <label for="lastName"><b>Last name: </b></label>
                 <input type="text" v-model="managerform.lastName" />
             </div><br />
             <div class="form-group">
-                <label for="email">Email: </label>
+                <label for="email"><b>Email: </b></label>
                 <input type="email" v-model="managerform.email" required />
             </div><br />
             <div class="form-group">
-                <label for="password">Password: </label>
+                <label for="password"><b>Password: </b></label>
                 <input type="password" v-model="managerform.password" required />
             </div><br />
             <div class="form-group">

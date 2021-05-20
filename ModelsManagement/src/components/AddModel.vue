@@ -40,7 +40,7 @@
             </div><br />
             <div class="form-group">
                 <label for="birthdate">Birthdate: </label>
-                <input type="datetime" v-model="modelform.birthdate" />
+                <input type="datetime" v-model="modelform.birthdate" placeholder="yyyy-mm-dd"/>
             </div><br />
             <div class="form-group">
                 <label for="nationality">Nationality: </label>
@@ -96,8 +96,8 @@
                 country: "",
                 birthdate: "",
                 nationality: "",
-                height: "",
-                shoeSize: "",
+                height: 0,
+                shoeSize: 0,
                 hairColor: "",
                 eyeColor: "",
                 comments: "",
@@ -107,10 +107,14 @@
         methods: {
             addModelFunction() {
                 var url = "https://localhost:44368/api/Models";
+                var dataForm = this.modelform;
+
+                dataForm.height = Number.parseFloat(this.modelform.height);
+                dataForm.shoeSize = Number.parseFloat(this.modelform.shoeSize);
 
                 fetch(url, {
                     method: 'POST',  
-                    body: JSON.stringify(this.modelform), 
+                    body: JSON.stringify(dataForm), 
                     credentials: 'include',
                     headers: new Headers({
                         'Authorization': 'Bearer ' + localStorage.getItem("token"),

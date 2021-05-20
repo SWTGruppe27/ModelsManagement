@@ -1,16 +1,52 @@
 <template>
     <div id="addmodeltojob">
         <h1>Add Model To Job</h1>
+
+
+        <div id="jobsList" v-for="(job,index) in jobs" v-bind:key="index">
+            <p><b>Id: </b>{{job.efJobId}} <b>Customer: </b> {{job.customer}}</p>
+            <p><b>Location:</b> {{job.location}}</p>
+            <br />
+        </div>
+
+        <div id="modelList" v-for="(model,index) in models" v-bind:key="'a'+index">
+            <p><b>Model Id:</b> {{model.efModelId}}</p>
+            <p><b>Name: </b>{{model.firstName}} {{model.lastName}}</p>
+            <br />
+        </div>
+
+
+        <div class="form-group">
+            <button type="button" class="button"><a v-on:click="loadJobs()">Load Jobs</a></button>
+        </div>
+        <br />
+
+
+        <div class="form-group">
+            <button type="button" class="button"><a v-on:click="loadModels()">Load Models</a></button>
+        </div>
+        <br />
+
         <form>
-            <!--Drop down w jobs-->
-            <!--Drop down w models-->
             <div class="form-group">
-                <button type="button" class="button" v-on:click="addModelToJobFunction()"><a><router-link to="/Menu">Add Model To Job</router-link></a></button>
-            </div><br />
-            <div class="form-group">
-                <button class="button"><router-link to="/Menu">Back to menu</router-link></button>
+                <label for="modelId">Model Id: </label>
+                <input type="number" v-model="modelId" required />
             </div>
+            <br />
+            <div class="form-group">
+                <label for="jobId">Job Id: </label>
+                <input type="number" v-model="jobId" required />
+            </div>
+            <br />
+            <div class="form-group">
+                <button type="button" class="button"><a v-on:click="addModelToJobFunction()">Add Model To Job</a></button>
+            </div>
+            <br />
         </form>
+
+        <div class="form-group">
+            <button type="button" class="button"><router-link to="/Menu">Back to menu</router-link></button>
+        </div>
     </div>
 </template>
 
@@ -21,21 +57,56 @@
             msg: String
         },
         data: () => ({
-            addmodeltojobform: {
-                //List of jobs to pick from
-                //List of models to add??
-            },
+            jobs: [],
+            models: [],
+            modelId: "",
+            jobId: ""
         }),
         methods: {
-            addModelToJobFunction() {
+            loadJobs() {
+                var url = "https://localhost:44368/api/Jobs";
+                fetch(url, {
+                    method: 'GET',
+                    credentials: 'include',
+                    headers: {
+                        'Authorization': 'Bearer ' + localStorage.getItem("token"),
+                        'Content-Type': 'application/json'
+                    }
+                }).then(responseJson => responseJson.json()
+                ).then(data => { this.jobs = data }).catch(error => alert('Something bad happened: ' + error));
+            },
 
+            loadModels() {
+                var url = "https://localhost:44368/api/Models";
+                fetch(url, {
+                    method: 'GET',
+                    credentials: 'include',
+                    headers: {
+                        'Authorization': 'Bearer ' + localStorage.getItem("token"),
+                        'Content-Type': 'application/json'
+                    }
+                }).then(responseJson => responseJson.json()
+                ).then(data => { this.models = data }).catch(error => alert('Something bad happened: ' + error));
+            },
+            addModelToJobFunction() {
+                var url = "https://localhost:44368/api/Jobs/" + this.jobId + "/model/" + this.modelId;
+
+                fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify(this.managerform),
+                    credentials: 'include',
+                    headers: new Headers({
+                        'Authorization': 'Bearer ' + localStorage.getItem("token"),
+                        'Content-Type': 'application/json'
+                    })
+                }).then(responseJson => { this.response = responseJson }).catch(error => alert('Something bad happened: ' + error));
             }
         }
     };
 </script>
 
 <style scoped>
-    #addmodeltojob{
+    #addmodeltojob {
         text-align: center;
     }
 </style>

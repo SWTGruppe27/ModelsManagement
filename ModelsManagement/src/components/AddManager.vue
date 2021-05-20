@@ -62,4 +62,8 @@
     #addmanager {
         text-align: center;
     }
+    
+    label {
+        font-weight: bold;
+    }
 </style>

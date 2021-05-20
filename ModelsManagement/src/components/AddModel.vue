@@ -130,4 +130,8 @@
     #addmodel{
         text-align: center;
     }
+
+    label {
+        font-weight: bold;
+    }
 </style>

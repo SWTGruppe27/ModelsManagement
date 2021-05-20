@@ -72,4 +72,7 @@
     #addjob{
         text-align: center;
     }
+    label {
+        font-weight: bold;
+    }
 </style>
